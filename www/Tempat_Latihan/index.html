@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 15px;
+            margin: 25px;
+        }
+        .comtainer {
+            max-width: 600px;
+            background-color: rgba(98, 98, 98, 0.515);
+            padding: 20px 15px;
+            border-radius: 10px;
+        }
+        .form-group{
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select, textarea{
+            width: 20px;
+            padding: 8px;
+            margin-top: 8px;
+        }
+        .btn-simpan{
+            background: rgb(20, 20, 201);
+            color: rgb(234, 234, 234);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-reset{
+            background: rgb(227, 11, 25);
+            color: rgb(255, 255, 255);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .resault{
+            margin-top: 20px;
+            padding: 15px;
+            background: rgb(240, 233, 233);
+            border-left: 5px solid rgb(127, 29, 218);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulir Pendaftaran</h2>
+        <form method="post" action="">
+            <div class="from-group">
+                <label for="">Nama Lengkap</label>
+                <input type="text" name="nama" required>
+            </div>
+            <div class="from-group">
+                <label for="">Umur</label>
+                <input type="number" name="umur" required>
+            </div>
+            <div class="from-group">
+                <label for="">Jenis Kelamin</label>
+                <input type="radio" name="rd_jk" value="Laki-laki" checked> Laki-laki
+                <input type="radio" name="rd_jk" value="Perempuan" > Perempuan
+            </div>
+            <div class="from-group">
+                <label for="">Pendidikan Terakhir</label>
+                <select name="Pendidikan" id="">
+                    <option value="SMA">SMA/SMK</option>
+                    <option value="DIPLOMA">DIPLOMA (D3)</option>
+                    <option value="SARJANA">SARJANA (S1)</option>
+                    <option value="MAGISTER">MAGISTER (S2)</option>
+                </select>
+            </div>
+            <div class="from-group">
+                <label for="">Hobi (Boleh Pilih Lebih dari 1)</label>
+                <input type="checkbox" name="Hobi{}" id="" value="Coding"> Coding
+                <input type="checkbox" name="Hobi{}" id="" value="Gamer"> Gamer
+                <input type="checkbox" name="Hobi{}" id="" value="Membaca"> Membaca
+            </div>
+            <div class="from-group">
+                <label for="">Alamat</label>
+                <textarea name="Alamat" id="" rows="3"></textarea>
+            </div>
+            <div class="from-group">
+                <button type="submit" name="save" class="btn-simpan">submit</button>
+                <button type="reset" name="reset" class="btn-reset">reset</button>
+            </div>
+        </form>
+        <?php
+        if(isset($_POST['submit'])){
+            $nama = htmlspecialchars($_POST['nama']);
+            $umur = htmlspecialchars($_POST['umur']);
+            $jk = $_POST['rd_jk'];
+            $Pendidikan = $_POST['Pendidikan'];
+            $Hobi = isset($_POST['Hobi']) ? implode(", ". $_POST['Hobi']) : "Tidak ada Hobi";
+            $Alamat = n12br(htmlspecialchars($_POST['Alamat']));
+        }
+            echo "<div class="result">";
+            echo "<h3>Hasil Input</h3>";
+            echo "<b>Nama</b> $nama";
+            echo "<b>Umur/b> $umur";
+            echo "<b>Jenis Kelamin</b> $jk";
+            echo "<b>Pendidikan</b> $Pendidikan";
+            echo "<b>Hobi</b> $Hobi";
+            echo "<b>Alamat</b> $Alamat"
+            echo "</div>"/.comtainer
+        ?>
+    </div>
+</body>
+</html>

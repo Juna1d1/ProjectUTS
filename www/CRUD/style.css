@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px;
+    background: #f0f2f5;
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0,0.1);
+}
+
+h2{
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],select,textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.radio-group, .check-group { margin: 10px 0;}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+}
+
+th { background: #007bff; color: white;}
+tr:hover { background: yellow;}
+
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-add { background: #28a745; width: 100%; font-size: 16px;}
+.btn-add:hover{ background: #218838;}
+.btn-edit {background: #ffc107; color: #333; font-size: 12px; margin-right: 5px;}
+.btn-del { background: #dc3545; font-size: 12px;}
